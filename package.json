@@ -1,0 +1,72 @@
+{
+  "name": "analytics-plus",
+  "version": "1.0.0",
+  "description": "Universal Analytics Wrapper",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "webpack",
+    "build:watch": "webpack --watch",
+    "test": "nyc --require babel-core/register --reporter=lcov --all yarn run test:clean",
+    "test:clean": "mocha --opts spec/mocha.opts ${FILE:-spec}",
+    "lint": "eslint ${FILE:-src spec} && echo '\\033[0;32mAll Good\\033[0m' || true",
+    "cover": "nyc --require babel-core/register --reporter=text --all yarn run test:clean"
+  },
+  "nyc": {
+    "exclude": [
+      "spec",
+      "/usr/local"
+    ],
+    "include": [
+      "src"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vandise/analytics-plus.git"
+  },
+  "keywords": [
+    "analytics",
+    "ga",
+    "datalayer"
+  ],
+  "author": "Benjamin J. Anderson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vandise/analytics-plus/issues"
+  },
+  "homepage": "https://github.com/Vandise/analytics-plus#readme",
+  "dependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.6.5",
+    "babel-eslint": "^7.2.1",
+    "babel-loader": "^6.2.2",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.6.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.5.1",
+    "q": "^1.2.0",
+    "webpack": "^1.12.13",
+    "yaml-loader": "^0.1.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.23.0",
+    "chai": "^3.4.1",
+    "chai-as-promised": "^5.3.0",
+    "chai-string": "^1.2.0",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb": "latest",
+    "eslint-config-prettier": "^2.1.0",
+    "eslint-import-resolver-webpack": "^0.8.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "latest",
+    "eslint-plugin-react": "^6.9.0",
+    "mocha": "^2.1.0",
+    "mocha-multi": "^0.7.2",
+    "mocha-text-cov": "^0.1.0",
+    "nyc": "^6.4.4",
+    "sinon": "^1.17.2",
+    "sinon-chai": "^2.8.0",
+    "testdouble": "^3.2.5"
+  }
+}

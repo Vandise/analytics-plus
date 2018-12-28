@@ -1,0 +1,24 @@
+{
+  "globals": {
+
+    // Whitelisted within the scope of the specfiles, as they are part of our
+    // test suite's DSL.
+    "expect": true,
+    "sinon": true,
+    "td": true,
+
+    // xhrStub is a small utility that will set up stubbing routes for
+    // XMLHttpRequest objects.
+    "xhrStub": true
+
+  },
+  "rules": {
+
+    // Chai uses non-terminating expressions as part of standard assertions.
+    "no-unused-expressions": [0],
+
+    // Allow non-global require, to support intra-module stubbing
+    "global-require": [0]
+
+  }
+}
