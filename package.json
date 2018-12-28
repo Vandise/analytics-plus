@@ -2,7 +2,7 @@
   "name": "analytics-plus",
   "version": "1.0.0",
   "description": "Universal Analytics Wrapper",
-  "main": "src/index.js",
+  "main": "dist/analyticsplus.js",
   "scripts": {
     "build": "webpack",
     "build:watch": "webpack --watch",
